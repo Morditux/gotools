@@ -20,7 +20,7 @@ import (
 )
 
 const SRCPATH = "/bin"
-const DESTFILE = "/temp/test.zip"
+const DESTFILE = "/tmp/test.zip"
 
 func TestNewZipArchiveManager(t *testing.T) {
 	archiveManager := NewZipArchiveManager()
