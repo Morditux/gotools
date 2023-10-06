@@ -19,8 +19,8 @@ import (
 	"testing"
 )
 
-const SRCPATH = "/"
-const DESTFILE = "/"
+const SRCPATH = "/bin"
+const DESTFILE = "/temp/test.zip"
 
 func TestNewZipArchiveManager(t *testing.T) {
 	archiveManager := NewZipArchiveManager()
@@ -41,9 +41,9 @@ func TestZipArchiveManager_Pack(t *testing.T) {
 
 func TestZipArchiveManager_Unpack(t *testing.T) {
 	// Efface le répertoire de destination s'il existe
-	err := os.RemoveAll(SRCPATH + "_unpacked")
+	err := os.RemoveAll("/tmp/test_unpacked")
 	archiveManager := NewZipArchiveManager()
-	err = archiveManager.Unpack(DESTFILE, SRCPATH+"_unpacked")
+	err = archiveManager.Unpack(DESTFILE, "/tmp/test_unpacked")
 	if err != nil {
 		t.Error(err)
 	}
